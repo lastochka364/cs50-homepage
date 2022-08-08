@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<link href="static/styles.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<title>Quiz by timo364.</title>
+	</head>
+	<body>
+		<script>
+			$(function(){
+				$("#anotherContent").load("header.html");
+			});
+		</script>
+	    <header id="anotherContent"></header>
+			<div class="title"><h1>Quiz</h1></div>
+			<div class="quiz">
+				<div class="question"></div>
+				<p class="option" id="option1"></p>
+				<p class="option" id="option2"></p>
+				<p class="option" id="option3"></p>
+				<p class="option" id="option4"></p>
+				<div class="progress">This is x of y questions.</div>
+			</div>
+			<div class="startBtn" onclick="startGame();"><p id="startText">Start Quiz</p></div>
+			<div id="gameOverDiv" class="gameOver">
+				<h1>Game Over</h1>
+				<p id="score">You got x out of y answers right</p>
+			</div>
+
+		<script src="static/logic.js"></script>
+	</body>
+</html>

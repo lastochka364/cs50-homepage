@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+  color: white;
+  text-align: center;
+  user-select: none;   /* ВОТ ЭТО НЕ ДАЕТ ВЫДЕЛЯТЬ ПОХОДУ */
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(107,97,96,1) 100%);
+}
+h1 {
+  margin: 3vh;
+}
+
+/***************/
+/* Navigation */
+/***************/
+.nav {
+    padding: 20px;
+    background-color: #1D1D1B;
+}
+.nav a {
+    color: #999;
+}
+.nav a:hover {
+    color: #fff;
+}
+.github {
+  position: absolute;
+  margin-right: 3vh;
+  right: 0;
+}
+
+/***************/
+/* Index page */
+/***************/
+.index_container {
+    padding-top: 3vh;
+}
+.index_container p {
+  text-align: justify;
+  font-size: 1.5em;
+  text-indent: 1.5em;
+  margin: 3vh;
+  padding-bottom: 1em;
+}
+.first_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(217, 217, 217, 0.1);
+    padding: 2em;
+    margin: 3vh;
+}
+.descriptions {
+    display: flex;
+    justify-content: space-between;
+}
+.description {
+    display: block;
+    align-items: center;
+    margin: 3vh;
+    background-color: rgba(217, 217, 217, 0.1);
+}
+.description p {
+    font-size: 1em;
+}
+.description img {
+    margin: 3vh;
+}
+
+/***************/
+/* Gallery */
+/***************/
+.gallery {
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery_container {
+    width: 100%;
+    display: flex;
+}
+.slide {
+    position: relative;
+    cursor: pointer;
+    height: 70vh;
+    flex: 1;
+    margin: 5px;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: .5s;
+}
+.slide > img {
+    width: 90%;
+    height: 100%;
+}
+.slide > h3 {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: .5s
+}
+.slide.active {
+    flex: 7;
+}
+.slide.active > h3{
+    opacity: 1
+}
+
+/***************/
+/* Projects */
+/***************/
+.projects_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.project {
+    background-color: rgba(217, 217, 217, 0.1);
+    padding: 3vh;
+    margin: 3vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.controlmictray_proj {
+    flex-direction: row-reverse;
+}
+.p_text {
+    padding: 3vh;
+}
+.p_text p {
+    text-indent: 1.5em;
+    text-align: justify;
+}
+.p_text a {
+    text-decoration: underline;
+    color: white;
+}
+span {
+    font-weight: bold;
+}
+.p_list {
+    padding-left: 2em;
+}
+
+/***************/
+/* Quiz */
+/***************/
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+}
+.quiz {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    visibility: hidden;
+}
+.question {
+    font-size: 30px;
+}
+.option, .startBtn {
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    font-size: 17px;
+    background-color: rgba(217, 217, 217, 0.2);
+    cursor: pointer;
+    padding: 10px;
+}
+.option:hover, .startBtn:hover{
+    background-color: rgba(217, 217, 217, 0.1);
+}
+.startBtn {
+    left:0;right:0;
+    margin: 0 auto;
+}
+.gameOver {
+    left:0;
+    right:0;
+    visibility: hidden;
+}
+#score {
+    font-size: 25px;
+}
+.progress {
+    background: none;
+}
+
+/****************/
+/* Media 1020px */
+/****************/
+@media screen and (max-width: 1020px) {
+  .github {
+    position: relative;
+    margin: auto;
+  }
+  .index_container {
+    padding: 1em;
+    margin: 0;
+  }
+  .first_block {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1em;
+    margin: 1em;
+  }
+  .profile_photo {
+    padding: 2em;
+  }
+  .descriptions {
+    display: block;
+    align-items: center;
+  }
+  .description p {
+    padding-top: 0;
+  }
+  .description img {
+    margin: 1em;
+  }
+  .gallery_container {
+    display: block;
+  }
+  .project {
+    padding: 3vh;
+    margin: 1vh;
+    width: 80%;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/***************/
+/* Media 850px */
+/***************/
+@media screen and (max-width: 850px) {
+ .nav {
+    display: flex;
+    flex-direction: column;
+ }
+ .nav-item {
+    padding: 1em;
+ }
+ .github {
+    padding: 2em;
+ }
+ .nav-link{
+    font-size: 2em;
+ }
+}
